@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Burguer Tilin - Contacto</title>
+</head>
+<body>
+    
+    <header class="header-register" id="index">
+        <nav class="nav-menu">
+            <input type="checkbox" name="" id="check" class="nav-check-button">
+            <label for="check" class="nav-check">
+                <span class="nav-burguer-line"></span>
+            </label>
+            <span class="nav-menu-responsive">
+                <ul class="nav-list-responsive">
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/index.html#index">Inicio</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="">Menu</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/about-us/about-us.html">Nosotros</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/contact/contact.html">Contacto</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="register.html">Ingresa</a>
+                    </li>
+                </ul>
+            </span>
+            <figure class="img-container-logo">
+                <img src="/assets/icons/icon-logo.png" alt="" class="img-logo">
+            </figure>
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/index.html#index">Inicio</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="">Menu</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/about-us/about-us.html">Nosotros</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/contact/contact.html">Contacto</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="register.html">Ingresa</a>
+                </li>
+            </ul>
+            <div class="cart-user">
+                <div class="cart">
+                    <button>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+                <div class="user">
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-register">
+        <div class="form-container">
+            <div class="form-register">
+                <h2>REGISTRATE</h2>
+                <form action="">
+                    <div class="input-wrapper">
+                        <label for="user"></label>
+                        <input type="text" name="user" id="user" minlength="4" maxlength="20" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+                        <div class="line-input">
+                            <span>Usuario</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="name"></label>
+                        <input type="text" name="name" id="name" minlength="4" maxlength="80" required>
+                        <div class="line-input">
+                            <span>Nombre Completo</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" required pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$">
+                        <div class="line-input">
+                            <span>Correo Electronico</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="pass"></label>
+                        <input type="password" name="pass" id="pass" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <div class="line-input">
+                            <span>Contraseña</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="repass"></label>
+                        <input type="password" name="repass" id="repass" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <div class="line-input">
+                            <span>Repetir Contraseña</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="date"></label>
+                        <input type="date" name="date" id="date" required max="2005-01-01">
+                        <div class="line-input">
+                            <span>Fecha de Nacimiento</span>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="prov"></label>
+                        <select name="prov" id="prov" required>
+                            <option value="">Seleccione una localidad</option>
+                            <option value="liniers">Liniers</option>
+                            <option value="floresta">Floresta</option>
+                            <option value="flores">Flores</option>
+                            <option value="villaLuro">Villa Luro</option>
+                            <option value="versailles">Versailles</option>
+                            <option value="monteCastro">Monte Castro</option>
+                        </select>
+                        <div class="line-input">
+                            <span>Localidad</span>
+                        </div>
+                    </div>
+
+                    <button class="button-register" type="submit">REGISTRARSE</button>
+                </form>
+            </div>
+            <div class="form-login"> 
+                <input type="checkbox" name="" id="checked">
+                <label for="checked" class="label-check">
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                </label>
+                <div class="form-login-contain">
+                    <h2>INGRESA</h2>
+                    <form action="">
+                        <div class="input-wrapper">
+                            <label for="user-login"></label>
+                            <input type="text" name="user-login" id="user-login" required>
+                            <div class="line-input">
+                                <span>Usuario</span>
+                            </div>
+                        </div>
+    
+                        <div class="input-wrapper">
+                            <label for="pass-login"></label>
+                            <input type="password" name="pass-login" id="pass-login" required>
+                            <div class="line-input">
+                                <span>Contraseña</span>
+                            </div>
+                        </div>
+    
+                        <button class="button-login" type="submit">INGRESAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <h2><i class="fa-solid fa-circle-chevron-down"></i> Presiona el boton para ingresar</h2>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <span>Copyright &copy; 2023 BurguerTilin</span>
+        </div>
+        <div class="contact">
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <a class="footer-link" href="tel:1132692245">11-3269-2245</a>
+            </div>
+            <div class="instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <a class="footer-link" href="">@BurguerTilin</a>
+            </div>
+            <div class="mail">
+                <i class="fa-solid fa-envelope"></i>
+                <a class="footer-link" href="mailto:burguertilin@gmail.com">burguertilin@gmail.com</a>
+            </div>
+        </div>
+        <div class="container-img-footer">
+            <figure>
+                <img class="img-logo-footer" src="/assets/icons/icon-logo-footer.png" alt="">
+            </figure>
+        </div>
+    </footer>
+
+</body>
+</html>

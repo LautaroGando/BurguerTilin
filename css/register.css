@@ -1,0 +1,448 @@
+header.header-register {
+
+    .nav-menu {
+        position: fixed;
+        height: 100px;
+        top: 0;
+
+        .nav-list {
+
+            .nav-list-item {
+
+                &::after {
+                    bottom: 33%;
+                }
+            }
+        }
+    }
+}
+
+main.main-register {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > h2 {
+        color: var(--primary-color);
+        text-transform: uppercase;
+        position: absolute;
+        transform: translateX(225px);
+        font-size: 16px;
+        z-index: -1;
+
+        & i {
+            transform: rotate(90deg);
+        }
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+
+        .form-register {
+            width: 400px;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            background-color: var(--secondary-color);
+            z-index: 1;
+            box-shadow: 0px 0 10px rgba(0, 0, 0, 0.377);
+
+            & h2 {
+                color: var(--primary-color);
+                margin-bottom: 20px;
+            }
+
+            .input-wrapper {
+                width: 300px;
+                position: relative;
+
+                & input,
+                & select {
+                    width: 100%;
+                    padding: 10px;
+                    height: 40px;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    color: var(--primary-color);
+                    position: relative;
+                }
+
+                & input {
+
+                    &:focus + .line-input span,
+                    &:valid + .line-input span {
+                        transform: translateY(-10px);
+                    }
+
+                    &:valid + .line-input span {
+                        color: var(--primary-color);
+                    }
+                }
+
+                & select {
+
+                    + .line-input span {
+                        transform: translateY(-10px);
+                    }
+
+                    &:valid + .line-input span {
+                        color: var(--primary-color);
+                    }
+                }
+
+                & input + .line-input,
+                & select + .line-input {
+                    height: 1px;
+                    background-color: var(--primary-color);
+                    margin-bottom: 30px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 0%;
+                        height: 3px;
+                        background-color: var(--primary-color);
+                        transition: all 0.4s ease-in-out;
+                    }
+                }
+
+                & input:focus + .line-input::after,
+                & select:focus + .line-input::after {
+                    width: 100%;
+                }
+
+                & input + .line-input span,
+                & select + .line-input span {
+                    color: var(--primary-hover-color);
+                    position: absolute;
+                    bottom: 20px;
+                    padding: 10px;
+                    transition: all 0.2s ease-in-out;
+                    z-index: -1;
+
+                    &::after {
+                        content: '*';
+                        margin-left: 5px;
+                    }
+                }
+
+                &:nth-child(6) input + .line-input span {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .button-register {
+                width: 100%;
+                height: 80px;
+                background-color: var(--secondary-color);
+                backdrop-filter: blur(100px);
+                border: none;
+                font-size: 22px;
+                color: var(--primary-color);
+                border-radius: 0 0 10px 10px;
+                cursor: pointer;
+    
+                &::after {
+                    content: 'REGISTRARSE';
+                    position: absolute;
+                    width: 100%;
+                    display: grid;
+                    place-content: center;
+                    height: 3%;
+                    font-size: 22px;
+                    border-radius: 0 0 10px 10px;
+                    background-color: var(--primary-color);
+                    left: 0;
+                    color: transparent;
+                    top: 0;
+                    overflow: hidden;
+                    transition: all 0.2s ease-in-out;
+                }
+    
+                &:hover::after {
+                    height: 100%;
+                    color: var(--secondary-color);
+                }
+            }
+        }
+
+        .form-login {
+            transform: translateX(-341px);
+            width: 400px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            gap: 20px;
+            align-items: center;
+            background-color: transparent;
+            z-index: 0;
+            transition: all 0.4s ease-in-out;
+
+            #checked {
+                display: none;
+            }
+    
+            #checked:checked + .label-check + .form-login-contain {
+                transform: translateX(338px);
+            }
+
+            #checked:checked + .label-check {
+                transform: rotate(90deg);
+            }
+    
+            .label-check {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 50px;
+                color: var(--secondary-color);
+                position: absolute;
+                left: 86%;
+                transform: rotate(-90deg);
+                z-index: 2;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+                background-color: var(--primary-color);
+                border-radius: 50px;
+    
+                &:hover {
+                    color: var(--secondary-hover-color);
+                }
+            }
+
+            .form-login-contain {
+                transform: translateX(0px);
+                width: 400px;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                gap: 20px;
+                align-items: center;
+                background-color: var(--primary-color);
+                z-index: 0;
+                transition: all 0.4s ease-in-out;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.801) inset;
+
+                & h2 {
+                    color: var(--secondary-color);
+                    text-align: center;
+                }
+    
+                .input-wrapper {
+                    width: 270px;
+    
+                    & input {
+                        width: 100%;
+                        padding: 10px;
+                        height: 40px;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        color: var(--secondary-color);
+                    }
+    
+                    & input {
+    
+                        &:focus + .line-input span,
+                        &:valid + .line-input span {
+                            transform: translateY(-20px);
+                        }
+                    }
+    
+                    & input + .line-input {
+                        height: 1px;
+                        background-color: var(--secondary-color);
+                        margin-bottom: 30px;
+                        position: relative;
+    
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 0%;
+                            height: 3px;
+                            background-color: var(--secondary-color);
+                            transition: all 0.4s ease-in-out;
+                        }
+                    }
+    
+                    & input:focus + .line-input::after {
+                        width: 100%;
+                    }
+    
+                    & input + .line-input span {
+                        color: var(--secondary-hover-color);
+                        position: absolute;
+                        bottom: 10px;
+                        padding: 10px;
+                        transition: all 0.2s ease-in-out;
+                        z-index: -1;
+                    }
+                }
+    
+                .button-login {
+                    width: 100%;
+                    height: 80px;
+                    background-color: var(--primary-color);
+                    backdrop-filter: blur(100px);
+                    border: none;
+                    font-size: 22px;
+                    color: var(--secondary-color);
+                    border-radius: 0 0 10px 10px;
+                    cursor: pointer;
+        
+                    &::after {
+                        content: 'INGRESAR';
+                        position: absolute;
+                        width: 100%;
+                        display: grid;
+                        place-content: center;
+                        height: 3%;
+                        font-size: 22px;
+                        border-radius: 0 0 10px 10px;
+                        background-color: var(--secondary-color);
+                        left: 0;
+                        color: transparent;
+                        top: 0;
+                        overflow: hidden;
+                        transition: all 0.2s ease-in-out;
+                    }
+        
+                    &:hover::after {
+                        height: 100%;
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    header.header-register {
+
+        .nav-menu {
+
+            .nav-list {
+                font-size: 14px;
+
+                .nav-list-item {
+
+                    &::after {
+                        bottom: 38% !important;
+                    }
+                }
+            }
+        }
+    }
+
+    main.main-register {
+
+        & > h2 {
+            transform: translateX(205px);
+            font-size: 13px;
+        }
+    
+        .form-container {
+    
+            .form-register {
+                width: 350px;
+            }
+    
+            .form-login {
+                transform: translateX(-290px);
+                width: 350px;
+        
+                #checked:checked + .label-check + .form-login-contain {
+                    transform: translateX(285px);
+                }
+        
+                .label-check {
+                    width: 40px;
+                    height: 40px;
+                    left: 85.5%;
+                }
+    
+                .form-login-contain {
+                    width: 350px;
+        
+                    .input-wrapper {
+                        width: 220px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    main.main-register {
+
+        & > h2 {
+            color: var(--secondary-color);
+            transform: translateY(490px);
+            font-size: 15px;
+    
+            & i {
+                transform: translate(-50%) rotate(180deg);
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+            }
+        }
+    
+        .form-container {
+            flex-direction: column;
+    
+            .form-register {
+                width: 320px;
+    
+                .input-wrapper {
+                    width: 250px;
+                }
+            }
+    
+            .form-login {
+                transform: translateY(-440px);
+                width: 300px;
+        
+                #checked:checked + .label-check + .form-login-contain {
+                    transform: translateY(400px);
+                }
+    
+                #checked:checked + .label-check {
+                    transform: rotate(-180deg);
+                }
+        
+                .label-check {
+                    left: 130px;
+                    bottom: 11px;
+                    transform: rotate(0deg);
+                }
+    
+                .form-login-contain {
+                    transform: translateX(0px);
+                    width: 300px;
+                }
+            }
+        }
+    }
+
+}

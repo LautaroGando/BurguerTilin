@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <title>Burguer Tilin - Contacto</title>
+</head>
+<body>
+    
+    <header class="header-contacto" id="index">
+        <nav class="nav-menu">
+            <input type="checkbox" name="" id="check" class="nav-check-button">
+            <label for="check" class="nav-check">
+                <span class="nav-burguer-line"></span>
+            </label>
+            <span class="nav-menu-responsive">
+                <ul class="nav-list-responsive">
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/index.html#index">Inicio</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="">Menu</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/about-us/about-us.html">Nosotros</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="contact.html">Contacto</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/register/register.html">Ingresa</a>
+                    </li>
+                </ul>
+            </span>
+            <figure class="img-container-logo">
+                <img src="/assets/icons/icon-logo.png" alt="" class="img-logo">
+            </figure>
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/index.html#index">Inicio</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="">Menu</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/about-us/about-us.html">Nosotros</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="contact.html">Contacto</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/register/register.html">Ingresa</a>
+                </li>
+            </ul>
+            <div class="cart-user">
+                <div class="cart">
+                    <button>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+                <div class="user">
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-contacto">
+        <h1>CONTACTO</h1>
+        <div class="container-flex">
+            <form action="">
+                <div class="input-wrapper">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" required minlength="4" maxlength="80">
+                    <div class="line-input">
+                        <span>Nombre Completo</span>
+                    </div>
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" required minlength="4" maxlength="80" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$">
+                    <div class="line-input">
+                        <span>Correo Electronico</span>
+                    </div>
+                </div>
+    
+                <div class="input-wrapper">
+                    <label for="text"></label>
+                    <textarea name="text" id="text" required minlength="10" maxlength="400"></textarea>
+                    <div class="line-textarea">
+                        <span>Consulta</span>
+                    </div>
+                </div>
+    
+                <button type="submit">ENVIAR</button>
+            </form>
+    
+            <div class="address">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.8111941573206!2d-58.52029212348869!3d-34.634211259110565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc8370e4efe09%3A0x5880e022332d1a76!2sAv.%20Juan%20Bautista%20Justo%209100%2C%20C1408AKT%20CABA!5e0!3m2!1ses-419!2sar!4v1692651876389!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="border-top"></div>
+                <div class="border-right"></div>
+                <div class="border-bottom"></div>
+                <div class="border-left"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <span>Copyright &copy; 2023 BurguerTilin</span>
+        </div>
+        <div class="contact">
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <a class="footer-link" href="tel:1132692245">11-3269-2245</a>
+            </div>
+            <div class="instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <a class="footer-link" href="">@BurguerTilin</a>
+            </div>
+            <div class="mail">
+                <i class="fa-solid fa-envelope"></i>
+                <a class="footer-link" href="mailto:burguertilin@gmail.com">burguertilin@gmail.com</a>
+            </div>
+        </div>
+        <div class="container-img-footer">
+            <figure>
+                <img class="img-logo-footer" src="/assets/icons/icon-logo-footer.png" alt="">
+            </figure>
+        </div>
+    </footer>
+
+</body>
+</html>
