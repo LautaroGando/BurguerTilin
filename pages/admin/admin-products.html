@@ -81,27 +81,32 @@
         <form action="" id="form">
             <h2>AGREGAR PRODUCTO</h2>
             <div>
-                <input type="text" name="img" id="img" placeholder="URL de la imagen">
-                <input type="text" name="product" id="product" placeholder="Nombre del producto">
-                <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripcion"></textarea>
-                <input type="number" name="price" id="price" placeholder="Precio">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="img" id="img" placeholder="URL de la imagen" required>
+                <input type="text" name="name" id="name" placeholder="Nombre del producto" required>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripcion" required></textarea>
+                <input type="number" name="price" id="price" placeholder="Precio" required>
+                <input type="date" name="date" id="date" required>
             </div>
             <button type="submit">AGREGAR</button>
         </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>IMAGEN</th>
-                    <th>PRODUCTO</th>
-                    <th>DESCRIPCION</th>
-                    <th>PRECIO</th>
-                    <th>ACCIONES</th>
-                </tr>
-            </thead>
-            <tbody id="table">
-                
-            </tbody>
-        </table>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>IMAGEN</th>
+                        <th>PRODUCTO</th>
+                        <th>DESCRIPCION</th>
+                        <th>PRECIO</th>
+                        <th>FECHA</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer>
@@ -129,6 +134,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/admin-product.js"></script>
 </body>
 </html>
