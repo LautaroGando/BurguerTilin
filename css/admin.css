@@ -241,3 +241,25 @@ main.main-admin {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    main.main-admin {
+    
+        & h1 {
+            font-size: 20px;
+        }
+    
+        & form {
+            width: 90%;
+        }
+    
+        .main-admin-search {
+    
+            & input {
+                width: 200px;
+            }
+        }
+    }
+
+}
