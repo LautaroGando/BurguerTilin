@@ -89,20 +89,6 @@ if (localStorage.getItem('product') === null) {
 
 };
 
-function countProducts() {
-    let counterProduct = 0;
-
-    for (let i = 0; i < products.length; i++) {
-    
-        counterProduct++
-    
-    };
-    
-    productCountHTML.innerHTML = `Hay un total de ${counterProduct} productos`;
-}
-
-countProducts();
-
 productAddHTML.addEventListener("click", () => {
 
     formHTML.style.opacity = 1;
@@ -111,7 +97,9 @@ productAddHTML.addEventListener("click", () => {
     formHTML.style.zIndex = 10;
     outFormHTML.style.zIndex = 10;
 
-    document.querySelector('h2').innerHTML = 'AGREGAR USUARIO';
+    document.querySelector('h2').innerHTML = 'AGREGAR PRODUCTO';
+
+    resetForm();
 
 });
 
@@ -208,8 +196,6 @@ formHTML.addEventListener('submit', (e) => {
 
     paintProduct(products);
 
-    resetForm();
-
     formHTML.style.opacity = 0;
     outFormHTML.style.opacity = 0;
 
@@ -221,6 +207,20 @@ formHTML.addEventListener('submit', (e) => {
     countProducts();
 
 });
+
+function countProducts() {
+    let counterProduct = 0;
+
+    for (let i = 0; i < products.length; i++) {
+    
+        counterProduct++
+    
+    };
+    
+    productCountHTML.innerHTML = `Hay un total de ${counterProduct} productos`;
+}
+
+countProducts();
 
 function paintProduct(array) {
 
@@ -358,7 +358,7 @@ function editProduct(id) {
     formHTML.style.zIndex = 10;
     outFormHTML.style.zIndex = 10;
 
-    document.querySelector('h2').innerHTML = 'EDITAR USUARIO';
+    document.querySelector('h2').innerHTML = 'EDITAR PRODUCTO';
 
 };
 

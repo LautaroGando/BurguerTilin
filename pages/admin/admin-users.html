@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Burguer Tilin - Usuarios</title>
+</head>
+<body class="body-admin">
+
+    <header class="header-admin" id="index">
+        <nav class="nav-menu">
+            <input type="checkbox" name="" id="check" class="nav-check-button">
+            <label for="check" class="nav-check">
+                <span class="nav-burguer-line"></span>
+            </label>
+            <span class="nav-menu-responsive">
+                <ul class="nav-list-responsive">
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/index.html#index">Inicio</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="">Menu</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/about-us/about-us.html">Nosotros</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/contact/contact.html">Contacto</a>
+                    </li>
+                    <li class="nav-list-item-responsive">
+                        <a class="nav-list-link-responsive" href="/pages/register/register.html">Ingresa</a>
+                    </li>
+                </ul>
+            </span>
+            <figure class="img-container-logo">
+                <img src="/assets/icons/icon-logo.png" alt="" class="img-logo">
+            </figure>
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/index.html#index">Inicio</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="">Menu</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/about-us/about-us.html">Nosotros</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/contact/contact.html">Contacto</a>
+                </li>
+                <li class="nav-list-item">
+                    <a class="nav-list-link" href="/pages/register/register.html">Ingresa</a>
+                </li>
+            </ul>
+            <div class="cart-user">
+                <div class="cart">
+                    <button>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+                <div class="user">
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-admin">
+        <h1>ADMINISTRADOR DE USUARIOS</h1>
+        <p id="user-count"></p>
+        <div class="main-admin-search">
+            <input type="text" name="search" id="search" placeholder="Buscar usuario...">
+            <button id="user-add">Añadir</button>
+        </div>
+        <div class="out-form"></div>
+        <form action="" id="form">
+            <h2>AGREGAR USUARIO</h2>
+            <p id="user-count"></p>
+            <div>
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="name" id="name" placeholder="Nombre del usuario" required>
+                <input type="email" name="email" id="email" placeholder="Correo electronico">
+                <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirmar correo electronico">
+                <input type="text" name="role" id="role" placeholder="Rol del usuario">
+                <input type="password" name="pass" id="pass" placeholder="Clave">
+                <input type="password" name="confirmPass" id="confirmPass" placeholder="Confirmar clave">
+                <input type="date" name="createDate" id="createDate" required>
+            </div>
+            <button type="submit">AGREGAR</button>
+        </form>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>USUARIO</th>
+                        <th>EMAIL</th>
+                        <th>ROL</th>
+                        <th>CREADO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <span>Copyright &copy; 2023 BurguerTilin</span>
+        </div>
+        <div class="contact">
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <a class="footer-link" href="tel:1132692245">11-3269-2245</a>
+            </div>
+            <div class="instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <a class="footer-link" href="">@BurguerTilin</a>
+            </div>
+            <div class="mail">
+                <i class="fa-solid fa-envelope"></i>
+                <a class="footer-link" href="mailto:burguertilin@gmail.com">burguertilin@gmail.com</a>
+            </div>
+        </div>
+        <div class="container-img-footer">
+            <figure>
+                <img class="img-logo-footer" src="/assets/icons/icon-logo-footer.png" alt="">
+            </figure>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/admin-users.js"></script>
+</body>
+</html>

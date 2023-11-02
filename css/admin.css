@@ -57,6 +57,7 @@ main.main-admin {
     & form {
         opacity: 0;
         display: flex;
+        padding: 20px;
         flex-direction: column;
         width: 350px;
         height: 550px;
@@ -79,8 +80,10 @@ main.main-admin {
 
         & div {
             display: flex;
+            justify-content: center;
             flex-direction: column;
             gap: 20px;
+            flex: 1;
 
             & input,
             textarea {
@@ -98,6 +101,11 @@ main.main-admin {
                 &:focus {
                     border-bottom: 3px solid var(--primary-color);
                 }
+            }
+
+            & input[disabled] {
+                color: transparent;
+                cursor: no-drop;
             }
 
             & textarea {
