@@ -31,7 +31,7 @@
                         <a class="nav-list-link-responsive" href="pages/contact/contact.html">Contacto</a>
                     </li>
                     <li class="nav-list-item-responsive">
-                        <a class="nav-list-link-responsive" href="/pages/register/register.html">Ingresa</a>
+                        <a class="nav-list-link-responsive nav-button-login" href="/pages/register/register.html">Ingresar</a>
                     </li>
                     <li class="nav-list-item-responsive">
                         <a class="nav-list-link-responsive" href="/pages/admin/admin-products.html">Administrar Productos</a>
@@ -58,7 +58,7 @@
                     <a class="nav-list-link" href="pages/contact/contact.html">Contacto</a>
                 </li>
                 <li class="nav-list-item">
-                    <a class="nav-list-link" href="/pages/register/register.html">Ingresa</a>
+                    <a class="nav-list-link nav-button-login" href="/pages/register/register.html">Ingresar</a>
                 </li>
             </ul>
             <div class="cart-user">
@@ -92,191 +92,12 @@
     </header>
 
     <main class="main-inicio" id="main">
+        <div class="main-search">
+            <input type="text" name="search" id="search" placeholder="Buscar producto...">  
+            <span id="burguer-count"></span>      
+        </div>
         <section class="card-container">
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-1.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>BBQ Bacon XL Triple</h2>
-                    <ul>
-                        <li>3 x 200grs. de Carne</li>
-                        <li>Bacon</li>
-                        <li>2 x Cheddar</li>
-                        <li>Barbacoa</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$3.800</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
 
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-2.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>Melt de Carne Doble</h2>
-                    <ul>
-                        <li>2 x 200grs. de Carne</li>
-                        <li>2 x Cheddar</li>
-                        <li>Salsa Spicy</li>
-                        <li>Cebolla Caramelizada</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$2.800</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-3.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>Cheese Onion Doble</h2>
-                    <ul>
-                        <li>2 x 200grs. de Carne</li>
-                        <li>Cebolla Frita</li>
-                        <li>Cheddar</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$3.500</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-4.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>Whopper</h2>
-                    <ul>
-                        <li>200grs. de Carne</li>
-                        <li>Pepino</li>
-                        <li>Cebolla Cruda</li>
-                        <li>Tomate</li>
-                        <li>Lechuga</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$3.200</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-5.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>Provo King Doble Carne</h2>
-                    <ul>
-                        <li>2 x 200grs. de Carne</li>
-                        <li>2 x Provoleta</li>
-                        <li>Tomate</li>
-                        <li>Lechuga</li>
-                        <li>Cebolla Cruda</li>
-                        <li>Mayonesa</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$2.500</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-6.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>Stacker con Bastones de Muzzarella</h2>
-                    <ul>
-                        <li>2 x 200grs. de Carne</li>
-                        <li>Bacon</li>
-                        <li>2 x Cheddar</li>
-                        <li>3 x Bastones de Muzarrella</li>
-                        <li>Salsa Stacker</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$3.800</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-product">
-                    <figure>
-                        <img src="assets/images/burguers/burguer-7.png" alt="">
-                    </figure>
-                </div>
-                <div class="card-desc">
-                    <h2>Stacker Doble</h2>
-                    <ul>
-                        <li>2 x 200grs. de Carne</li>
-                        <li>Bacon</li>
-                        <li>3 x Cheddar</li>
-                        <li>Salsa Stacker</li>
-                    </ul>
-                    <div class="container-price-date">
-                        <h3>$3.600</h3>
-                        <span>12/08/2023</span>
-                    </div>
-                    <div class="card-buttons">
-                        <button>VER MAS</button>
-                        <button>AGREGAR</button>
-                    </div>
-                </div>
-            </article>
-
-            <div class="menu"> 
-                <a href="">
-                    VER MAS
-                    <i class="fa-solid fa-circle-chevron-down"></i>
-                </a>
-            </div>
         </section>
 
         <div class="dates-container">

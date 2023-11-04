@@ -81,13 +81,13 @@ const productCountHTML = document.getElementById("product-count");
 const productAddHTML = document.getElementById("product-add");
 const outFormHTML = document.querySelector('.out-form');
 
-const products = JSON.parse(localStorage.getItem('product'));
-
 if (localStorage.getItem('product') === null) {
 
     localStorage.setItem('product', JSON.stringify(productsStart));
 
 };
+
+const products = JSON.parse(localStorage.getItem('product'));
 
 productAddHTML.addEventListener("click", () => {
 
@@ -196,15 +196,15 @@ formHTML.addEventListener('submit', (e) => {
 
     paintProduct(products);
 
+    countProducts();
+
+    updateStorage();
+    
     formHTML.style.opacity = 0;
     outFormHTML.style.opacity = 0;
 
     formHTML.style.zIndex = -1;
     outFormHTML.style.zIndex = -1;
-
-    updateStorage();
-
-    countProducts();
 
 });
 
@@ -217,7 +217,7 @@ function countProducts() {
     
     };
     
-    productCountHTML.innerHTML = `Hay un total de ${counterProduct} productos`;
+    productCountHTML.innerHTML = `Hay un total de ${counterProduct} productos.`;
 }
 
 countProducts();

@@ -465,7 +465,7 @@ footer {
             .img-container-logo {
 
                 .img-logo {
-                    width: 150px;
+                    width: 125px;
                 }
             }
 
@@ -477,18 +477,18 @@ footer {
 
                 .cart,
                 .user {
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
 
                     & button {
-                        font-size: 30px;
+                        font-size: 20px;
                     }
                 }
 
                 .cart {
 
                     & i {
-                        font-size: 25px;
+                        font-size: 20px;
                     }
                 }
     

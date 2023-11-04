@@ -31,7 +31,7 @@
                         <a class="nav-list-link-responsive" href="/pages/contact/contact.html">Contacto</a>
                     </li>
                     <li class="nav-list-item-responsive">
-                        <a class="nav-list-link-responsive" href="/pages/register/register.html">Ingresa</a>
+                        <a class="nav-list-link-responsive nav-button-login" href="/pages/register/register.html">Ingresar</a>
                     </li>
                     <li class="nav-list-item-responsive">
                         <a class="nav-list-link-responsive" href="/pages/admin/admin-products.html">Administrar Productos</a>
@@ -58,7 +58,7 @@
                     <a class="nav-list-link" href="/pages/contact/contact.html">Contacto</a>
                 </li>
                 <li class="nav-list-item">
-                    <a class="nav-list-link" href="/pages/register/register.html">Ingresa</a>
+                    <a class="nav-list-link nav-button-login" href="/pages/register/register.html">Ingresar</a>
                 </li>
             </ul>
             <div class="cart-user">
@@ -97,13 +97,23 @@
             <p id="user-count"></p>
             <div>
                 <input type="hidden" name="id" id="id">
-                <input type="text" name="name" id="name" placeholder="Nombre del usuario" required>
+                <input type="text" name="fullname" id="fullname" placeholder="Nombre completo">
+                <input type="text" name="user" id="user" placeholder="Nombre del usuario" required>
                 <input type="email" name="email" id="email" placeholder="Correo electronico">
                 <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirmar correo electronico">
                 <input type="text" name="role" id="role" placeholder="Rol del usuario">
                 <input type="password" name="pass" id="pass" placeholder="Clave">
                 <input type="password" name="confirmPass" id="confirmPass" placeholder="Confirmar clave">
-                <input type="date" name="createDate" id="createDate" required>
+                <input type="text" name="date" id="date" placeholder="Fecha de nacimiento">
+                <input type="text" name="createDate" id="createDate" placeholder="Fecha de creacion" required>
+                <select name="location" id="location">
+                    <option value="">Seleccione una localidad</option>
+                    <option value="Liniers">Liniers</option>
+                    <option value="Almagro">Almagro</option>
+                    <option value="Versalles">Versalles</option>
+                    <option value="Floresta">Floresta</option>
+                    <option value="Flores">Flores</option>
+                </select>
             </div>
             <button type="submit">AGREGAR</button>
         </form>

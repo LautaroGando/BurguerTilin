@@ -60,7 +60,7 @@ main.main-admin {
         padding: 20px;
         flex-direction: column;
         width: 350px;
-        height: 550px;
+        height: 750px;
         position: fixed;
         align-items: center;
         top: 50%;
@@ -86,7 +86,8 @@ main.main-admin {
             flex: 1;
 
             & input,
-            textarea {
+            textarea,
+            select {
                 width: 300px;
                 height: 35px;
                 padding: 15px;
@@ -111,6 +112,11 @@ main.main-admin {
             & textarea {
                 height: 120px;
                 resize: none;
+            }
+
+            & select {
+                height: 40px;
+                padding: 10px;
             }
         }
 

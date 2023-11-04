@@ -1,5 +1,29 @@
 main.main-inicio {
 
+    .main-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 40px 10px 0;
+
+        & input[id="search"] {
+            width: 300px;
+            height: 35px;
+            border: none;
+            background-color: var(--secondary-hover-color);
+            border-radius: 5px 5px 0 0;
+            border-bottom: 3px solid var(--primary-color);
+            outline: none;
+            padding: 10px;
+            color: var(--primary-color);
+        }
+
+        & span {
+            color: var(--primary-hover-color);
+        }
+    }
+
     .card-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 680px));
@@ -262,6 +286,13 @@ main.main-inicio {
 @media screen and (max-width: 768px) {
 
     main.main-inicio {
+
+        .main-search {
+    
+            & span {
+                font-size: 12px;
+            }
+        }
 
         .card-container {
             width: 90%;

@@ -1,23 +1,29 @@
 const usersStart = [
     {
         id: crypto.randomUUID(),
-        name: 'admin',
+        fullname: 'Lautaro Gando',
+        user: 'admin',
         email: 'admin@admin.com',
         confirmEmail: 'admin@admin.com',
         pass: 'admin',
         confirmPass: 'admin',
         role: 'ADMIN',
-        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime()
+        date: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        location: 'Liniers'
     },
     {
         id: crypto.randomUUID(),
-        name: 'Ganditooo',
-        email: 'lauticapo1910cavs@gmail.com',
-        confirmEmail: 'lauticapo1910cavs@gmail.com',
-        pass: 'Ganditocapo3',
-        confirmPass: 'Ganditocapo3',
+        fullname: 'Lautaro Gando',
+        user: 'user',
+        email: 'user@user.com',
+        confirmEmail: 'user@user.com',
+        pass: 'user',
+        confirmPass: 'user',
         role: 'USER',
-        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime()
+        date: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        location: 'Versalles'
     }
 ];
 
@@ -28,6 +34,8 @@ const formButtonHTML = formHTML.querySelector("button[type='submit']");
 const userCountHTML = document.getElementById("user-count");
 const userAddHTML = document.getElementById("user-add");
 const outFormHTML = document.querySelector('.out-form');
+const dateHTML = document.querySelector("input[id='date']");
+const createDateHTML = document.querySelector("input[id='createDate']");
 
 if (localStorage.getItem('user') === null) {
 
@@ -36,6 +44,18 @@ if (localStorage.getItem('user') === null) {
 };
 
 const users = JSON.parse(localStorage.getItem('user'));
+
+dateHTML.addEventListener('focus', () => {
+
+    dateHTML.type = 'date';
+
+});
+
+createDateHTML.addEventListener('focus', () => {
+
+    createDateHTML.type = 'date';
+
+});
 
 outFormHTML.addEventListener('click', () => {
 
@@ -67,9 +87,9 @@ searchHTML.addEventListener('keyup', (e) => {
 
     const filterUserArray = users.filter(user => {
 
-        const name = user.name.toLowerCase();
+        const userName = user.user.toLowerCase();
 
-        if (name.includes(element)) {
+        if (userName.includes(element)) {
 
             return true;
 
@@ -93,13 +113,16 @@ formHTML.addEventListener('submit', (e) => {
 
     const newUser = {
         id: id,
-        name: element.name.value,
+        fullname: element.fullname.value,
+        user: element.user.value,
         email: element.email.value,
         confirmEmail: element.confirmEmail.value,
         pass: element.pass.value,
         confirmPass: element.confirmPass.value,
         role: element.role.value,
-        createDate: new Date(element.createDate.value + 'T00:00:00-03:00').getTime()
+        date: new Date(element.date.value + 'T00:00:00-03:00').getTime(),
+        createDate: new Date(element.createDate.value + 'T00:00:00-03:00').getTime(),
+        location: element.location.value
     };
 
     if (element.email.value !== element.confirmEmail.value) {
@@ -130,7 +153,7 @@ formHTML.addEventListener('submit', (e) => {
 
     const searchUser = users.find(user => {
 
-        if (user.name === element.name.value) {
+        if (user.user === element.user.value) {
 
             return true;
 
@@ -257,7 +280,7 @@ function userCount() {
         
     };
 
-    userCountHTML.innerHTML = `Hay un total de ${counterUser} usuarios`;
+    userCountHTML.innerHTML = `Hay un total de ${counterUser} usuarios.`;
 
 };
 
@@ -270,7 +293,7 @@ function paintUser(array) {
     array.forEach(user => {
         
         tableHTML.innerHTML += `<tr>
-                                    <td>${user.name}</td>
+                                    <td>${user.user}</td>
                                     <td>${user.email}</td>
                                     <td>${user.role}</td>
                                     <td>${formatDate(user.createDate)}</td>
@@ -278,7 +301,7 @@ function paintUser(array) {
                                         <button onclick="editUser('${user.id}')">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </button>
-                                        <button onclick="deleteUser('${user.id}', '${user.name}')">
+                                        <button onclick="deleteUser('${user.id}', '${user.user}')">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
                                     </td>
@@ -328,13 +351,13 @@ function formatInputDate(date) {
 
 }; 
 
-function deleteUser(id, name) {
+function deleteUser(id, user) {
 
     const deleteUserArray = users.findIndex(user => user.id === id);
 
     Swal.fire({
 
-        title: `Desea eliminar el usuario: ${name}?`,
+        title: `Desea eliminar el usuario: ${user}?`,
         text: "Los cambios no seran reversibles!",
         icon: 'warning',
         color: '#edb026',
@@ -353,7 +376,7 @@ function deleteUser(id, name) {
 
                 {
                     title: `Eliminado!`,
-                    text: `El usuario: ${name} ha sido eliminado correctamente!`,
+                    text: `El usuario: ${user} ha sido eliminado correctamente!`,
                     icon: 'success',
                     color: '#edb026',
                     background: '#3d3b3b',
@@ -382,13 +405,16 @@ function editUser(id) {
     const element = formHTML.elements;
 
     element.id.value = editUserArray.id;
-    element.name.value = editUserArray.name;
+    element.fullname.value = editUserArray.fullname;
+    element.user.value = editUserArray.user;
     element.email.value = editUserArray.email;
     element.confirmEmail.value = editUserArray.confirmEmail;
     element.role.value = editUserArray.role;
     element.pass.value = editUserArray.pass;
     element.confirmPass.value = editUserArray.confirmPass;
     element.createDate.value = formatInputDate(editUserArray.createDate);
+    element.date.value = formatInputDate(editUserArray.date);
+    element.location.value = editUserArray.location;
 
     element.pass.disabled = true;
     element.confirmPass.disabled = true;
@@ -414,10 +440,13 @@ function resetForm() {
 
     formButtonHTML.innerHTML = 'AGREGAR';
 
-    formHTML.elements.name.focus();
+    formHTML.elements.user.focus();
 
     formHTML.elements.pass.disabled = false;
     formHTML.elements.confirmPass.disabled = false;
+
+    dateHTML.type = 'text';
+    createDateHTML.type = 'text';
 
 };
 

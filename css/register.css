@@ -44,7 +44,7 @@ main.main-register {
 
         .form-register {
             width: 400px;
-            height: 700px;
+            height: 750px;
             display: flex;
             flex-direction: column;
             justify-content: center;
