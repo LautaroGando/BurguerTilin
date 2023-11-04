@@ -38,8 +38,6 @@ searchBurguerHTML.addEventListener("keyup", (e) => {
 
 });
 
-burguerCountHTML.innerHTML = `Se han encontrado ${burguers.length} productos.`;
-
 function burguerCount() {
 
     let counterBurguer = 0;
