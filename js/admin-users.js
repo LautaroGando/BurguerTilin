@@ -1,32 +1,3 @@
-const usersStart = [
-    {
-        id: crypto.randomUUID(),
-        fullname: 'Lautaro Gando',
-        user: 'admin',
-        email: 'admin@admin.com',
-        confirmEmail: 'admin@admin.com',
-        pass: 'admin',
-        confirmPass: 'admin',
-        role: 'ADMIN',
-        date: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
-        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
-        location: 'Liniers'
-    },
-    {
-        id: crypto.randomUUID(),
-        fullname: 'Lautaro Gando',
-        user: 'user',
-        email: 'user@user.com',
-        confirmEmail: 'user@user.com',
-        pass: 'user',
-        confirmPass: 'user',
-        role: 'USER',
-        date: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
-        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
-        location: 'Versalles'
-    }
-];
-
 const formHTML = document.getElementById("form");
 const tableHTML = document.getElementById("table");
 const searchHTML = document.getElementById("search");
@@ -36,12 +7,6 @@ const userAddHTML = document.getElementById("user-add");
 const outFormHTML = document.querySelector('.out-form');
 const dateHTML = document.querySelector("input[id='date']");
 const createDateHTML = document.querySelector("input[id='createDate']");
-
-if (localStorage.getItem('user') === null) {
-
-    localStorage.setItem('user', JSON.stringify(usersStart));
-
-};
 
 const users = JSON.parse(localStorage.getItem('user'));
 

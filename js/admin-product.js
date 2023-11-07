@@ -1,78 +1,3 @@
-const productsStart = [
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-2",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-3",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-4",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-5",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-6",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-7",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-8",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-    {
-        id: crypto.randomUUID(),
-        img: "/assets/images/burguers/burguer-1.png",
-        name: "Burguer-9",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
-        price: 53000,
-        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
-    },
-];
-
 const formHTML = document.getElementById("form");
 const tableHTML = document.getElementById("table");
 const searchHTML = document.getElementById("search");
@@ -80,12 +5,6 @@ const formButtonHTML = formHTML.querySelector("button[type='submit']");
 const productCountHTML = document.getElementById("product-count");
 const productAddHTML = document.getElementById("product-add");
 const outFormHTML = document.querySelector('.out-form');
-
-if (localStorage.getItem('product') === null) {
-
-    localStorage.setItem('product', JSON.stringify(productsStart));
-
-};
 
 const products = JSON.parse(localStorage.getItem('product'));
 

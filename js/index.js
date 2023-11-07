@@ -6,11 +6,129 @@ window.addEventListener("scroll", function() {
 
 });
 
+const usersStart = [
+    {
+        id: crypto.randomUUID(),
+        fullname: 'Lautaro Gando',
+        user: 'admin',
+        email: 'admin@admin.com',
+        confirmEmail: 'admin@admin.com',
+        pass: 'admin',
+        confirmPass: 'admin',
+        role: 'ADMIN',
+        date: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        location: 'Liniers'
+    },
+    {
+        id: crypto.randomUUID(),
+        fullname: 'Lautaro Gando',
+        user: 'user',
+        email: 'user@user.com',
+        confirmEmail: 'user@user.com',
+        pass: 'user',
+        confirmPass: 'user',
+        role: 'USER',
+        date: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        createDate: new Date('2023-11-02' + 'T00:00:00-03:00').getTime(),
+        location: 'Versalles'
+    }
+];
+
+if (localStorage.getItem('user') === null) {
+
+    localStorage.setItem('user', JSON.stringify(usersStart));
+
+};
+
+const productsStart = [
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-1",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-2",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-3",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-4",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-5",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-6",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-7",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-8",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+    {
+        id: crypto.randomUUID(),
+        img: "/assets/images/burguers/burguer-1.png",
+        name: "Burguer-9",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
+        price: 53000,
+        date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+    },
+];
+
+if (localStorage.getItem('product') === null) {
+
+    localStorage.setItem('product', JSON.stringify(productsStart));
+
+};
+
 const cardContainerHTML = document.querySelector(".card-container");
 const searchBurguerHTML = document.getElementById("search");
 const burguerCountHTML = document.getElementById("burguer-count");
 
 const burguers = JSON.parse(localStorage.getItem("product"));
+
+//! COMPROBAR SI UN USUARIO INICIO SESION
 
 let filterBurguerArray;
 
@@ -91,15 +209,7 @@ function paintBurguer(array) {
 
 };
 
-if (burguers) {
-
-    paintBurguer(burguers);
-
-} else {
-
-    window.location.href = "/pages/admin/admin-products.html";
-    
-};
+paintBurguer(burguers);
 
 function formatDate(date) {
 
