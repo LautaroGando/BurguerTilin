@@ -128,8 +128,6 @@ const burguerCountHTML = document.getElementById("burguer-count");
 
 const burguers = JSON.parse(localStorage.getItem("product"));
 
-//! COMPROBAR SI UN USUARIO INICIO SESION
-
 let filterBurguerArray;
 
 searchBurguerHTML.addEventListener("keyup", (e) => {

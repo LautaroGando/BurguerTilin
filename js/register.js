@@ -101,4 +101,48 @@ users = JSON.parse(localStorage.getItem("user"));
 const buttonLoginHTML = document.querySelector(".button-login");
 const formLoginHTML = document.getElementById('form-login');
 
-//! HACER EL LOGIN DE NUEVO PARA APRENDERLO
+formLoginHTML.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+    const users = JSON.parse(localStorage.getItem('user')) || [];
+
+    const user = e.target.elements.userLogin.value;
+    const pass = e.target.elements.passLogin.value;
+
+    const findUser = users.find(usr => usr.user === user && usr.pass === pass);
+
+    if (!findUser) {
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario y/o clave es incorrecto!',
+            color: '#edb026',
+            background: '#3d3b3b',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        return;
+
+    };
+
+    Swal.fire({
+        icon: 'success',
+        title: `Bienvenido ${user}!`,
+        text: 'Seras redireccionado al inicio en unos instantes.',
+        color: '#edb026',
+        background: '#3d3b3b',
+        showConfirmButton: false,
+        timer: 1500
+    });
+
+    localStorage.setItem('login', JSON.stringify(findUser));
+
+    setTimeout(() => {
+
+        window.location.href = '/index.html';
+        
+    }, 2000);
+
+});

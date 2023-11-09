@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/verifyAdmin.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/admin.css">
@@ -17,7 +18,7 @@
                 <span class="nav-burguer-line"></span>
             </label>
             <span class="nav-menu-responsive">
-                <ul class="nav-list-responsive">
+                <ul id="nav-list-responsive" class="nav-list-responsive">
                     <li class="nav-list-item-responsive">
                         <a class="nav-list-link-responsive" href="/index.html#index">Inicio</a>
                     </li>
@@ -30,21 +31,12 @@
                     <li class="nav-list-item-responsive">
                         <a class="nav-list-link-responsive" href="/pages/contact/contact.html">Contacto</a>
                     </li>
-                    <li class="nav-list-item-responsive">
-                        <a class="nav-list-link-responsive nav-button-login" href="/pages/register/register.html">Ingresar</a>
-                    </li>
-                    <li class="nav-list-item-responsive">
-                        <a class="nav-list-link-responsive" href="/pages/admin/admin-products.html">Administrar Productos</a>
-                    </li>
-                    <li class="nav-list-item-responsive">
-                        <a class="nav-list-link-responsive" href="/pages/admin/admin-users.html">Administrar Usuarios</a>
-                    </li>
                 </ul>
             </span>
             <figure class="img-container-logo">
                 <img src="/assets/icons/icon-logo.png" alt="" class="img-logo">
             </figure>
-            <ul class="nav-list">
+            <ul id="nav-list-header" class="nav-list">
                 <li class="nav-list-item">
                     <a class="nav-list-link" href="/index.html#index">Inicio</a>
                 </li>
@@ -56,9 +48,6 @@
                 </li>
                 <li class="nav-list-item">
                     <a class="nav-list-link" href="/pages/contact/contact.html">Contacto</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="nav-list-link nav-button-login" href="/pages/register/register.html">Ingresar</a>
                 </li>
             </ul>
             <div class="cart-user">
@@ -72,13 +61,8 @@
                         <i class="fa-solid fa-user"></i>
                     </button>
                 </div>
-                <div class="nav-list-admin">
-                    <li class="nav-list-item">
-                        <a class="nav-list-link" href="/pages/admin/admin-products.html">Administrar Productos</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a class="nav-list-link" href="/pages/admin/admin-users.html">Administrar Usuarios</a>
-                    </li>
+                <div id="nav-list" class="nav-list-admin">
+                    
                 </div>
             </div>
         </nav>
@@ -162,5 +146,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/admin-users.js"></script>
+    <script src="/js/header.js"></script>
 </body>
 </html>
