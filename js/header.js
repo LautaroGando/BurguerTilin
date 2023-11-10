@@ -76,10 +76,6 @@ if (loginVerify) {
         navList.appendChild(liUsers);
         liUsers.appendChild(aUsers);
 
-    } else {
-
-
-
     };
 
 } else {
@@ -106,4 +102,4 @@ if (loginVerify) {
     navListHeader.appendChild(liLogin);
     liLogin.appendChild(aLogin);
 
-}
+};

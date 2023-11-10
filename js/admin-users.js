@@ -7,8 +7,21 @@ const userAddHTML = document.getElementById("user-add");
 const outFormHTML = document.querySelector('.out-form');
 const dateHTML = document.querySelector("input[id='date']");
 const createDateHTML = document.querySelector("input[id='createDate']");
+const crossFormHTML = formHTML.querySelector('i');
 
 const users = JSON.parse(localStorage.getItem('user'));
+
+crossFormHTML.addEventListener('click', () => {
+
+    resetForm();
+
+    formHTML.style.opacity = 0;
+    outFormHTML.style.opacity = 0;
+
+    formHTML.style.zIndex = -1;
+    outFormHTML.style.zIndex = -1;
+
+});
 
 dateHTML.addEventListener('focus', () => {
 
@@ -79,18 +92,18 @@ formHTML.addEventListener('submit', (e) => {
     const newUser = {
         id: id,
         fullname: element.fullname.value,
-        user: element.user.value,
-        email: element.email.value,
-        confirmEmail: element.confirmEmail.value,
+        user: element.user.value.toLowerCase(),
+        email: element.email.value.toLowerCase(),
+        confirmEmail: element.confirmEmail.value.toLowerCase(),
         pass: element.pass.value,
         confirmPass: element.confirmPass.value,
-        role: element.role.value,
+        role: element.role.value.toUpperCase(),
         date: new Date(element.date.value + 'T00:00:00-03:00').getTime(),
         createDate: new Date(element.createDate.value + 'T00:00:00-03:00').getTime(),
         location: element.location.value
     };
 
-    if (element.email.value !== element.confirmEmail.value) {
+    if (element.email.value.toLowerCase() !== element.confirmEmail.value.toLowerCase()) {
 
         Swal.fire({
             icon: 'error',
@@ -118,7 +131,7 @@ formHTML.addEventListener('submit', (e) => {
 
     const searchUser = users.find(user => {
 
-        if (user.user === element.user.value) {
+        if (user.user.toLowerCase() === element.user.value.toLowerCase()) {
 
             return true;
 
@@ -143,7 +156,7 @@ formHTML.addEventListener('submit', (e) => {
 
     const searchEmail = users.find(user => {
 
-        if (user.email === element.email.value) {
+        if (user.email.toLowerCase() === element.email.value.toLowerCase()) {
 
             return true;
 
@@ -166,9 +179,7 @@ formHTML.addEventListener('submit', (e) => {
 
     };
 
-    console.log(element.role.value)
-
-    if (element.role.value !== 'ADMIN' && element.role.value !== 'USER') {
+    if (element.role.value.toUpperCase() !== 'ADMIN' && element.role.value.toUpperCase() !== 'USER') {
 
         Swal.fire({
             icon: 'error',

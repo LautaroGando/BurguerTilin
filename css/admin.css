@@ -60,7 +60,6 @@ main.main-admin {
         padding: 20px;
         flex-direction: column;
         width: 350px;
-        height: 750px;
         position: fixed;
         align-items: center;
         top: 50%;
@@ -68,22 +67,35 @@ main.main-admin {
         transform: translate(-50%, -50%);
         background-color: var(--secondary-color);
         z-index: -1;
-        justify-content: space-around;
-        gap: 10px;
+        justify-content: center;
         border-radius: 3px;
         box-shadow: 0 0 10px #000;
         transition: all 0.2s linear;
 
+        & i {
+            cursor: pointer;
+            color: var(--primary-color);
+            font-size: 22px;
+            position: absolute;
+            top: 5px;
+            right: 7px;
+            transition: all 0.1s linear;
+
+            &:hover {
+                color: var(--primary-hover-color);
+                scale: 1.3;
+            }
+        }
+
         & h2 {
             color: var(--primary-color);
+            margin-bottom: 20px;
         }
 
         & div {
             display: flex;
-            justify-content: center;
             flex-direction: column;
             gap: 20px;
-            flex: 1;
 
             & input,
             textarea,
@@ -121,6 +133,7 @@ main.main-admin {
         }
 
         & button {
+            margin-top: 20px;
             width: 200px;
             height: 40px;
             background-color: var(--primary-color);

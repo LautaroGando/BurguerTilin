@@ -5,8 +5,21 @@ const formButtonHTML = formHTML.querySelector("button[type='submit']");
 const productCountHTML = document.getElementById("product-count");
 const productAddHTML = document.getElementById("product-add");
 const outFormHTML = document.querySelector('.out-form');
+const crossFormHTML = formHTML.querySelector('i');
 
 const products = JSON.parse(localStorage.getItem('product'));
+
+crossFormHTML.addEventListener('click', () => {
+
+    resetForm();
+
+    formHTML.style.opacity = 0;
+    outFormHTML.style.opacity = 0;
+
+    formHTML.style.zIndex = -1;
+    outFormHTML.style.zIndex = -1;
+
+});
 
 productAddHTML.addEventListener("click", () => {
 

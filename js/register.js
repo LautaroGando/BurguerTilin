@@ -11,7 +11,7 @@ formRegisterHTML.addEventListener("submit", (e) => {
 
     for (const i of users) {
         
-        if (element.user.value === i.user) {
+        if (element.user.value.toLowerCase() === i.user.toLowerCase()) {
 
             Swal.fire({
                 icon: 'error',
@@ -24,7 +24,7 @@ formRegisterHTML.addEventListener("submit", (e) => {
 
         };
 
-        if (element.email.value === i.email) {
+        if (element.email.value.toLowerCase() === i.email.toLowerCase()) {
 
             Swal.fire({
                 icon: 'error',
@@ -37,7 +37,7 @@ formRegisterHTML.addEventListener("submit", (e) => {
 
         };
 
-        if (element.email.value !== element.confirmEmail.value) {
+        if (element.email.value.toLowerCase() !== element.confirmEmail.value.toLowerCase()) {
 
             Swal.fire({
                 icon: 'error',
@@ -70,9 +70,9 @@ formRegisterHTML.addEventListener("submit", (e) => {
     const newUser = {
         id: id,
         fullname: element.fullname.value,
-        user: element.user.value,
-        email: element.email.value,
-        confirmEmail: element.confirmEmail.value,
+        user: element.user.value.toLowerCase(),
+        email: element.email.value.toLowerCase(),
+        confirmEmail: element.confirmEmail.value.toLowerCase(),
         pass: element.pass.value,
         confirmPass: element.confirmPass.value,
         role: "USER",
@@ -107,10 +107,10 @@ formLoginHTML.addEventListener('submit', (e) => {
 
     const users = JSON.parse(localStorage.getItem('user')) || [];
 
-    const user = e.target.elements.userLogin.value;
+    const user = e.target.elements.userLogin.value.toLowerCase();
     const pass = e.target.elements.passLogin.value;
 
-    const findUser = users.find(usr => usr.user === user && usr.pass === pass);
+    const findUser = users.find(usr => usr.user.toLowerCase() === user.toLowerCase() && usr.pass === pass);
 
     if (!findUser) {
 
