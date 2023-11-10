@@ -1,6 +1,7 @@
 const navListResponsive = document.getElementById('nav-list-responsive');
 const navList = document.getElementById('nav-list');
 const navListHeader = document.getElementById('nav-list-header');
+const divButtonUser = document.querySelector('.user');
 
 const loginVerify = JSON.parse(localStorage.getItem('login'));
 
@@ -29,6 +30,18 @@ if (loginVerify) {
 
     navListHeader.appendChild(liLogin);
     liLogin.appendChild(aLogin);
+
+    const liName = document.createElement('li');
+    const aName = document.createElement('a');
+
+    liName.classList.add('nav-list-item');
+    aName.classList.add('nav-list-link-user');
+    aName.innerText = loginVerify.user;
+    
+    navListHeader.appendChild(liName);
+    liName.appendChild(aName);
+
+    divButtonUser.style.display = 'none';
 
     if (loginVerify.role === 'ADMIN') {
 

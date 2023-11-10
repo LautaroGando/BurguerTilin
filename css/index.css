@@ -163,8 +163,20 @@ header {
                 }
 
                 .nav-list-link {
+                    cursor: pointer;
                     color: var(--secondary-color);
                     font-weight: 400;
+                    transition: all 0.4s ease-in-out;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                .nav-list-link-user {
+                    cursor: pointer;
+                    color: var(--secondary-color);
+                    font-weight: 600;
                     transition: all 0.4s ease-in-out;
 
                     &:hover {
