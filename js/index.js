@@ -1,4 +1,4 @@
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
 
     let header = document.querySelector(".nav-menu");
 
@@ -49,6 +49,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -57,6 +58,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -65,6 +67,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -73,6 +76,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -81,6 +85,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -89,6 +94,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -97,6 +103,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -105,6 +112,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
     {
         id: crypto.randomUUID(),
@@ -113,6 +121,7 @@ const productsStart = [
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officiis eligendi eius distinctio rem, veritatis ullam quisquam! Cupiditate, distinctio doloremque esse assumenda inventore, dolorum totam voluptates, molestias in laboriosam sint?",
         price: 53000,
         date: new Date('2023-10-31' + 'T00:00:00-03:00').getTime(),
+        favorite: false,
     },
 ];
 
@@ -126,7 +135,7 @@ const cardContainerHTML = document.querySelector(".card-container");
 const searchBurguerHTML = document.getElementById("search");
 const burguerCountHTML = document.getElementById("burguer-count");
 
-const burguers = JSON.parse(localStorage.getItem("product"));
+const burguers = JSON.parse(localStorage.getItem("product")) || [];
 
 let filterBurguerArray;
 
@@ -161,7 +170,7 @@ function burguerCount() {
     for (let i = 0; i < filterBurguerArray.length; i++) {
 
         counterBurguer++;
-        
+
     };
 
     return counterBurguer;
@@ -169,11 +178,11 @@ function burguerCount() {
 };
 
 function paintBurguer(array) {
-  
+
     cardContainerHTML.innerHTML = ``;
 
     array.forEach(burguer => {
-        
+
         cardContainerHTML.innerHTML += `<article class="card">
                                             <div class="card-product">
                                                 <figure>
@@ -222,5 +231,65 @@ function formatDate(date) {
     const formatIntl = objectIntl.format(date);
 
     return formatIntl;
+
+};
+
+const verifyLogin = JSON.parse(localStorage.getItem('login'));
+
+const cardDescription = document.querySelectorAll('.card-desc');
+
+if (verifyLogin) {
+
+    cardDescription.forEach((heart, index) => {
+
+        const buttonFavorite = document.createElement('i');
+    
+        buttonFavorite.classList.add('fa-solid', 'fa-heart', 'card-favorite');
+    
+        heart.appendChild(buttonFavorite);
+    
+        const isFavorite = burguers[index].favorite || false;
+    
+        if (isFavorite) {
+    
+            buttonFavorite.classList.add('card-favorite-mark');
+    
+        };
+    
+        buttonFavorite.onclick = () => {
+    
+            burguers[index].favorite = !burguers[index].favorite;
+    
+            buttonFavorite.classList.toggle('card-favorite-mark');
+    
+            if (burguers[index].favorite) {
+    
+                Swal.fire({
+                    icon: 'success',
+                    title: `${burguers[index].name} agregado a favoritos!`,
+                    color: '#edb026',
+                    background: '#3d3b3b',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+    
+            } else {
+    
+                Swal.fire({
+                    icon: 'error',
+                    title: `${burguers[index].name} eliminado de favoritos!`,
+                    color: '#edb026',
+                    background: '#3d3b3b',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+    
+            }
+    
+            localStorage.setItem('product', JSON.stringify(burguers));
+    
+        };
+    
+    });
 
 };

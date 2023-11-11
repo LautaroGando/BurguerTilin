@@ -631,12 +631,24 @@ footer {
                             }
                         }
 
-                        &:nth-child(6) a,
-                        &:nth-child(7) a {
+                        &:nth-child(7) a,
+                        &:nth-child(8) a {
                             color: var(--primary-color);
 
                             &:hover {
                                 color: var(--primary-hover-color);
+                            }
+                        }
+
+                        .nav-list-link-user {
+                            cursor: pointer;
+                            color: white;
+                            font-weight: 600;
+                            transition: all 0.4s ease-in-out;
+                            text-transform: uppercase;
+        
+                            &:hover {
+                                color: var(--primary-color);
                             }
                         }
                     }

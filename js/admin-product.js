@@ -83,7 +83,8 @@ formHTML.addEventListener('submit', (e) => {
         name: element.name.value,
         description: element.description.value,
         price: element.price.value,
-        date: new Date(element.date.value + 'T00:00:00-03:00').getTime()
+        date: new Date(element.date.value + 'T00:00:00-03:00').getTime(),
+        favorite: false
     };
 
     if (element.id.value) {

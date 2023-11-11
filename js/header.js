@@ -41,6 +41,16 @@ if (loginVerify) {
     navListHeader.appendChild(liName);
     liName.appendChild(aName);
 
+    const liNameResponsive = document.createElement('li');
+    const aNameResponsive = document.createElement('a');
+
+    liNameResponsive.classList.add('nav-list-item-responsive');
+    aNameResponsive.classList.add('nav-list-link-user');
+    aNameResponsive.innerText = loginVerify.user;
+    
+    navListResponsive.appendChild(liNameResponsive);
+    liNameResponsive.appendChild(aNameResponsive);
+
     divButtonUser.style.display = 'none';
 
     if (loginVerify.role === 'ADMIN') {
